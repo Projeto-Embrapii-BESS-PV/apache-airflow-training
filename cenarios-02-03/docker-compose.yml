@@ -1,0 +1,32 @@
+services:
+
+  airflow-service:
+    image: apache/airflow:latest
+    container_name: airflow
+    hostname: airflowhost
+    entrypoint: '/scripts/init_airflow.sh'
+    ports:
+      - '8080:8080'
+    volumes:
+      - "$PWD/dags:/opt/airflow/dags"
+      - "$PWD/scripts/airflow:/scripts"
+    restart: 'always'
+    depends_on:
+      - influxdb-service
+  
+  influxdb-service:
+    image: influxdb:latest
+    container_name: influxdb
+    hostname: influxhost
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=admin123
+      - DOCKER_INFLUXDB_INIT_ORG=CEAR
+      - DOCKER_INFLUXDB_INIT_BUCKET=InitBucket
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=tokenteste
+    ports:
+      - '8086:8086'
+    volumes:
+      - "$PWD/scripts/influxdb:/docker-entrypoint-initdb.d"
+    restart: 'always'
