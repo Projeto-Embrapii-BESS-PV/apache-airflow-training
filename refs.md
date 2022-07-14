@@ -8,7 +8,7 @@
 - [How-to Guides](https://airflow.apache.org/docs/apache-airflow/stable/howto/index.html)
 - [DAG class](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/models/dag/index.html#airflow.models.dag.DAG)
 - [Control Flow](https://airflow.apache.org/docs/apache-airflow/stable/concepts/dags.html#control-flow)
-    - [Trigger Rules](https://airflow.apache.org/docs/apache-airflow/stable/concepts/dags.html#concepts-trigger-rules)
+  - [Trigger Rules](https://airflow.apache.org/docs/apache-airflow/stable/concepts/dags.html#concepts-trigger-rules)
 - [Operators and Hooks Reference](https://airflow.apache.org/docs/apache-airflow/stable/operators-and-hooks-ref.html)
 - [InfluxDB Provider](https://airflow.apache.org/docs/apache-airflow-providers-influxdb/stable/index.html)
 - [InfluxDBOperator Example](https://airflow.apache.org/docs/apache-airflow-providers-influxdb/stable/operators/index.html#howto-operator-influxdboperator)
