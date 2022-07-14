@@ -27,9 +27,10 @@ with DAG(
         task_id="bash_task",
         bash_command='echo "hello world from bash operator"',
     )
-    task_2 = python_task = PythonOperator(
+    
+    task_2 = PythonOperator(
         task_id="python_task",
-        python_callable= py_hello_world,
+        python_callable=py_hello_world
     )
 
     task_1 >> task_2

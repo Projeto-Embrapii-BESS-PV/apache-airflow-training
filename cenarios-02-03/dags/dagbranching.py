@@ -59,14 +59,14 @@ def load_data_into_db():
     )
 
 with DAG(
-    'dag-02',
-    description='DAG ETL',
+    'dag-03',
+    description='DAG com Branching',
     schedule_interval=timedelta(minutes=5),
     start_date= datetime.now(),
     is_paused_upon_creation=False # inicia (unpause) a DAG assim que ela subir pro airflow pois ela é iniciada como paused
 ) as dag:
 
-    extract = PythonOperator(
+    extract_task = PythonOperator(
         task_id="extract-task",
         python_callable=extract_data,
     )
@@ -76,14 +76,20 @@ with DAG(
         python_callable=transform_data,
     )
 
+
     load = PythonOperator(
         task_id="load-task",
         python_callable=load_data_into_db,
     )
 
-    clear = BashOperator(
+    branching = BashOperator(
+        task_id="branch",
+        bash_command="echo 'hello from branch'"
+    )
+
+    clear_task = BashOperator(
         task_id="Clear",
         bash_command="dags-scripts/clear.sh"
     )
 
-    extract >> transform >> load >> clear
+    extract_task >> transform >> load >> [clear_task, branching]
