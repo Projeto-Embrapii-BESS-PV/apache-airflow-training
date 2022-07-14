@@ -1,16 +1,17 @@
-# Apache Airflow: Treinamento
+# Apache Airflow: Training
 
-Autor: [Jocelio Vieira](https://github.com/joceliovieira)
+Author: [Jocelio Vieira](https://github.com/joceliovieira)
 
-Esse repositório contem o material do treinamento sobre Apache Airflow, incluindo suas referências, recomendações de livros, dentre outros.
+---
 
-## Objetivo
+## About
 
-O objetivo do treinamento é explorar parte da teoria envolvida nos processos de manipulação de dados e a ferramenta Apache Airflow no contexto do projeto, assim como apresentar algumas práticas e rotinas aplicadas na engenharia de dados.
+Repository containing all material used at Apache Airflow Training provided by Jocelio, including its references, book recommendations, etc.
 
-Salienta-se que boa parte do que aqui é exposto foi baseado na [documentação oficial do Apache Airflow](https://airflow.apache.org/docs/apache-airflow/stable/index.html).
+## References
 
-## Links
+[Click here](/refs.md) to access references file.
 
-- Material base: teoria e afins, [clique aqui](/docs/base.md)
-- Referências: documentações, livros, cursos e afins, [clique aqui](/docs/refs.md)
+## Resources
+
+- [DockerHub: Apache Airflow Docker Image](https://hub.docker.com/r/apache/airflow)
