@@ -4,7 +4,7 @@ services:
     image: apache/airflow:latest
     container_name: airflow
     hostname: airflowhost
-    entrypoint: '/scripts/init_airflow.sh'
+    entrypoint: 'sh /scripts/init_airflow.sh'
     ports:
       - '8080:8080'
     volumes:

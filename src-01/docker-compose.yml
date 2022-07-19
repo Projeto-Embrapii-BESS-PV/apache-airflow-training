@@ -7,5 +7,5 @@ services:
     volumes:
       - "$PWD/dags:/opt/airflow/dags"
       - "$PWD/scripts:/scripts"
-    entrypoint: '/scripts/init_airflow.sh'
+    entrypoint: 'sh /scripts/init_airflow.sh'
     restart: 'always'
